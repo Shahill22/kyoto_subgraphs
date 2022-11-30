@@ -1,7 +1,7 @@
 /* eslint-disable prefer-const */
 
 import { dataSource, store, log } from "@graphprotocol/graph-ts";
-import { Deposit, Transfer, Lock, Unlock } from "../../generated/templates/PotteryVault/PancakeSwapPotteryVault";
+import { Deposit, Transfer, Lock, Unlock } from "../../generated/templates/PotteryVault/KyotoSwapPotteryVault";
 import {
   ZERO_BI,
   ONE_BI,

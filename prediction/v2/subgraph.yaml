@@ -5,7 +5,7 @@ features:
 graft:
   base: QmaHRgUYDNKEXueDTA1Ntnv4rTWsignS9LojZFwyBr2mVm
   block: 17140600
-repository: https://github.com/pancakeswap
+repository: https://github.com/KyotoSwap
 schema:
   file: ./schema.graphql
 dataSources:

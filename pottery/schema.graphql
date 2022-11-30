@@ -5,7 +5,7 @@ enum PotteryVaultStatus {
 }
 
 """
-PancakeSwap Pottery Vault
+KyotoSwap Pottery Vault
 """
 type Pottery @entity {
     id: ID!
@@ -14,7 +14,7 @@ type Pottery @entity {
 }
 
 """
-PancakeSwap Pottery Vault
+KyotoSwap Pottery Vault
 """
 type PotteryVault @entity {
     id: ID!
@@ -33,7 +33,7 @@ type PotteryVault @entity {
 }
 
 """
-PancakeSwap Pottery Round
+KyotoSwap Pottery Round
 """
 type PotteryVaultRound @entity {
     id: ID!

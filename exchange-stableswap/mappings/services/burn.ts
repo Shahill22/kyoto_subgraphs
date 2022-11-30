@@ -1,6 +1,6 @@
 /* eslint-disable prefer-const */
 import { BigDecimal, BigInt, Bytes, ethereum } from "@graphprotocol/graph-ts";
-import { updatePairDayData, updatePairHourData, updatePancakeDayData, updateTokenDayData } from "./dayUpdates";
+import { updatePairDayData, updatePairHourData, updateKyotoDayData, updateTokenDayData } from "./dayUpdates";
 import { Bundle, Burn, Pair, Token, Transaction } from "../../generated/schema";
 import { getOrCreateFactory } from "../utils/data";
 import { BIG_INT_ONE, convertTokenToDecimal } from "../utils";
@@ -55,7 +55,7 @@ export function burn(event: ethereum.Event, tokenAmount0: BigInt, tokenAmount1: 
 
   updatePairDayData(event);
   updatePairHourData(event);
-  updatePancakeDayData(event);
+  updateKyotoDayData(event);
   updateTokenDayData(token0 as Token, event);
   updateTokenDayData(token1 as Token, event);
 }

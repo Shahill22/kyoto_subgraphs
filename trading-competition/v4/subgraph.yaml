@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 description: Pancake Trading Competition V4
-repository: https://github.com/pancakeswap
+repository: https://github.com/KyotoSwap
 schema:
   file: ./schema.graphql
 dataSources:

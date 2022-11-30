@@ -1,6 +1,6 @@
 specVersion: 0.0.2
-description: Pancake Farm Auction
-repository: https://github.com/pancakeswap
+description: Kyoto Farm Auction
+repository: https://github.com/KyotoSwap
 schema:
   file: ./schema.graphql
 dataSources:

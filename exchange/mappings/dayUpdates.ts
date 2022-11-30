@@ -1,31 +1,31 @@
 /* eslint-disable prefer-const */
 import { PairHourData } from "../generated/schema";
 import { BigInt, BigDecimal, ethereum } from "@graphprotocol/graph-ts";
-import { Pair, Bundle, Token, PancakeFactory, PancakeDayData, PairDayData, TokenDayData } from "../generated/schema";
+import { Pair, Bundle, Token, KyotoFactory, KyotoDayData, PairDayData, TokenDayData } from "../generated/schema";
 import { ONE_BI, ZERO_BD, ZERO_BI, FACTORY_ADDRESS } from "./utils";
 
-export function updatePancakeDayData(event: ethereum.Event): PancakeDayData {
-  let pancake = PancakeFactory.load(FACTORY_ADDRESS);
+export function updateKyotoDayData(event: ethereum.Event): KyotoDayData {
+  let pancake = KyotoFactory.load(FACTORY_ADDRESS);
   let timestamp = event.block.timestamp.toI32();
   let dayID = timestamp / 86400;
   let dayStartTimestamp = dayID * 86400;
 
-  let pancakeDayData = PancakeDayData.load(dayID.toString());
-  if (pancakeDayData === null) {
-    pancakeDayData = new PancakeDayData(dayID.toString());
-    pancakeDayData.date = dayStartTimestamp;
-    pancakeDayData.dailyVolumeUSD = ZERO_BD;
-    pancakeDayData.dailyVolumeBNB = ZERO_BD;
-    pancakeDayData.totalVolumeUSD = ZERO_BD;
-    pancakeDayData.totalVolumeBNB = ZERO_BD;
-    pancakeDayData.dailyVolumeUntracked = ZERO_BD;
+  let kyotoDayData = KyotoDayData.load(dayID.toString());
+  if (kyotoDayData === null) {
+    kyotoDayData = new KyotoDayData(dayID.toString());
+    KyotoDayData.date = dayStartTimestamp;
+    kyotoDayData.dailyVolumeUSD = ZERO_BD;
+    kyotoDayData.dailyVolumeBNB = ZERO_BD;
+    kyotoDayData.totalVolumeUSD = ZERO_BD;
+    kyotoDayData.totalVolumeBNB = ZERO_BD;
+    kyotoDayData.dailyVolumeUntracked = ZERO_BD;
   }
-  pancakeDayData.totalLiquidityUSD = pancake.totalLiquidityUSD;
-  pancakeDayData.totalLiquidityBNB = pancake.totalLiquidityBNB;
-  pancakeDayData.totalTransactions = pancake.totalTransactions;
-  pancakeDayData.save();
+  kyotoDayData.totalLiquidityUSD = pancake.totalLiquidityUSD;
+  kyotoDayData.totalLiquidityBNB = pancake.totalLiquidityBNB;
+  kyotoDayData.totalTransactions = pancake.totalTransactions;
+  kyotoDayData.save();
 
-  return pancakeDayData as PancakeDayData;
+  return kyotoDayData as KyotoDayData;
 }
 
 export function updatePairDayData(event: ethereum.Event): PairDayData {

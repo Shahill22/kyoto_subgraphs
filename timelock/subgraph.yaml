@@ -1,6 +1,6 @@
 specVersion: 0.0.2
-description: PancakeSwap Timelock
-repository: https://github.com/pancakeswap
+description: KyotoSwap Timelock
+repository: https://github.com/KyotoSwap
 schema:
   file: ./schema.graphql
 dataSources:

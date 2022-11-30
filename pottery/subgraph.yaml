@@ -1,6 +1,6 @@
 specVersion: 0.0.2
-description: PancakeSwap Pottery
-repository: https://github.com/pancakeswap
+description: KyotoSwap Pottery
+repository: https://github.com/KyotoSwap
 schema:
   file: ./schema.graphql
 dataSources:
@@ -20,7 +20,7 @@ dataSources:
         - Pottery
       abis:
         - name: PotteryDraw
-          file: ./abis/PancakeSwapPotteryDraw.json
+          file: ./abis/KyotoSwapPotteryDraw.json
       eventHandlers:
         - event: CloseDraw(indexed uint256,indexed address,indexed uint256,address[],uint256,address)
           handler: handleCloseDraw
@@ -35,7 +35,7 @@ templates:
     kind: ethereum/contract
     network: bsc
     source:
-      abi: PancakeSwapPotteryVault
+      abi: KyotoSwapPotteryVault
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -44,8 +44,8 @@ templates:
       entities:
         - PotteryVault
       abis:
-        - name: PancakeSwapPotteryVault
-          file: ./abis/PancakeSwapPotteryVault.json
+        - name: KyotoSwapPotteryVault
+          file: ./abis/KyotoSwapPotteryVault.json
       eventHandlers:
         - event: Deposit(indexed address,indexed address,uint256,uint256)
           handler: handleDeposit
